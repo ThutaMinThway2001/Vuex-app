@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 export default {
     computed:{
         ...mapGetters([
@@ -22,8 +22,10 @@ export default {
         ])
     },
 
+    methods:mapActions(['getTodosData']),
+
     mounted(){
-        console.log(this.myTodos);
+        console.log(this.getTodosData());
     }
 }
 </script>
